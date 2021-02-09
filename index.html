@@ -11,7 +11,37 @@
   <body>
     <div class="bg-image">
       <div class="container">
-        <section class="login">Login</section>
+        <section class="login">
+          <div>
+            <img
+              src="/resources/img/Culina-logo-black.png"
+              alt="illustration of chopsticks inside bowl with name culina under"
+              class="logo-img"
+            />
+          </div>
+          <form action="home.html" method="GET" class="formlogin">
+            <div class="formlogin__credentialsdiv">
+              <input
+                type="text"
+                placeholder="Phone number, username, or email"
+                class="formlogin__username"
+                name="username"
+                id="username"
+              />
+            </div>
+            <div class="formlogin__credentialsdiv">
+              <input
+                type="text"
+                placeholder="Password"
+                class="formlogin__password"
+                name="password"
+                id="password"
+              />
+            </div>
+            <button type="submit" class="btn btn-login">Log In</button>
+            <p class="formlogin__forgotpass">Forgot Password?</p>
+          </form>
+        </section>
         <footer class="footer">
           <nav class="links">
             <ul>

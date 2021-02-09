@@ -33,4 +33,62 @@
   opacity: 0.4;
   min-height: 100vh;
   min-width: 100%;
+  z-index: -1000;
+}
+
+.bg-image .container {
+  padding: 1em;
+}
+
+.bg-image .container .login {
+  width: 100%;
+  padding: 1.5em;
+  background: #ffffff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+}
+
+.bg-image .container .login .logo-img {
+  display: block;
+  width: 106px;
+  margin: 0 auto;
+}
+
+.bg-image .container .login .formlogin__username, .bg-image .container .login .formlogin__password {
+  display: block;
+  padding: .6rem .7rem;
+  margin: 1rem auto;
+}
+
+.bg-image .container .login .formlogin__username::-webkit-input-placeholder, .bg-image .container .login .formlogin__password::-webkit-input-placeholder {
+  font-size: .6em;
+}
+
+.bg-image .container .login .formlogin__username:-ms-input-placeholder, .bg-image .container .login .formlogin__password:-ms-input-placeholder {
+  font-size: .6em;
+}
+
+.bg-image .container .login .formlogin__username::-ms-input-placeholder, .bg-image .container .login .formlogin__password::-ms-input-placeholder {
+  font-size: .6em;
+}
+
+.bg-image .container .login .formlogin__username::placeholder, .bg-image .container .login .formlogin__password::placeholder {
+  font-size: .6em;
+}
+
+.bg-image .container .login .formlogin__forgotpass {
+  font-size: .5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.btn-login {
+  width: 100%;
+  background-color: #FF6a5C;
+  color: white;
+  border: none;
+  padding: .6rem .8rem;
 }

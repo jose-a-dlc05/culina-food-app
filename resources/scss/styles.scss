@@ -26,6 +26,60 @@
     opacity: 0.4;
     min-height: 100vh;
     min-width: 100%;
+    z-index: -1000;
   }
 
+  .container {
+    // max-width: 700px;
+    padding: 1em;
+    // border: 1px solid black;
+    
+
+    .login {
+      width: 100%;
+      // border: 1px solid white;
+      padding: 1.5em;
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+
+        // Form Styles
+
+        .logo-img {
+          display: block;
+          width: 106px;
+          margin: 0 auto;
+        }
+
+        .formlogin {
+          &__username,
+          &__password {
+            display: block;
+            padding: .6rem .7rem;
+            margin: 1rem auto;
+
+            &::placeholder {
+              font-size: .6em;
+            }
+          }
+
+          &__forgotpass {
+            font-size: .5rem;
+            margin-top: 1rem;
+            text-align: center;
+          }
+
+        }
+    }
+  }
+
+}
+
+.btn-login {
+  width: 100%;
+  background-color: #FF6a5C;
+  color: white;
+  border: none;
+  padding: .6rem .8rem;
 }
