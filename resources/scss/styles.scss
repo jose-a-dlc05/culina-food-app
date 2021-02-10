@@ -1,5 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 12px;
 }
 
 .bg-image {
@@ -7,6 +15,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -27,59 +36,98 @@
     min-height: 100vh;
     min-width: 100%;
     z-index: -1000;
-  }
+  } // image and opacity
 
   .container {
-    // max-width: 700px;
-    padding: 1em;
+    max-width: 475px;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    position: relative;
     // border: 1px solid black;
     
 
-    .login {
-      width: 100%;
-      // border: 1px solid white;
-      padding: 1.5em;
-      background: #ffffff;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 10px;
+    .logo-img {
+      display: block;
+      width: 106px;
+      margin: 5px auto;
+    }
 
-        // Form Styles
+    .signin {
+      background-color: #ffffff;
+      padding: 25px;
 
-        .logo-img {
-          display: block;
-          width: 106px;
-          margin: 0 auto;
-        }
+      .fieldset {
+        border: medium none;
+        margin: 0 0 10px;
+        min-width: 100%;
+        padding: 0;
+        width: 100%;
+      }
 
-        .formlogin {
-          &__username,
-          &__password {
-            display: block;
-            padding: .6rem .7rem;
-            margin: 1rem auto;
+      &-username,
+      &-password,
+      &-submit {
+        font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+      }
 
-            &::placeholder {
-              font-size: .6em;
-            }
-          }
+      &-username,
+      &-password {
+        width: 100%;
+        border: 1px solid #ccc;
+        background: #fff;
+        margin: 0 0 5px;
+        padding: 10px;
+      }
 
-          &__forgotpass {
-            font-size: .5rem;
-            margin-top: 1rem;
-            text-align: center;
-          }
+      &-submit {
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background: #ff6a5c;
+        color: #fff;
+        margin: 0 0 5px;
+        padding: 10px;
+        font-size: 15px;
+      }
+    }
 
-        }
+    .footer {
+      color: #333;
+      font-weight: 600;
+      .links ul {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 0;
+      }
+  
+      .copyright {
+        text-align: center;
+      }
     }
   }
 
+  .sign-up-box {
+    background: #ffffff;
+    padding: 25px;
+    
+    p {
+      text-align: center;
+    }
+  }
+} // .bg-image
+
+.forgot_password_link {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.btn-login {
-  width: 100%;
-  background-color: #FF6a5C;
-  color: white;
-  border: none;
-  padding: .6rem .8rem;
+.sign-up-link a {
+  color: darken(#09c, 15%);
 }
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+  
