@@ -157,4 +157,16 @@ a {
     z-index: -1000;
     background-color: #ff6a5c;
   }
+  .wrapper .fieldset input::-webkit-input-placeholder {
+    font-size: 0.5rem;
+  }
+  .wrapper .fieldset input:-ms-input-placeholder {
+    font-size: 0.5rem;
+  }
+  .wrapper .fieldset input::-ms-input-placeholder {
+    font-size: 0.5rem;
+  }
+  .wrapper .fieldset input::placeholder {
+    font-size: 0.5rem;
+  }
 }

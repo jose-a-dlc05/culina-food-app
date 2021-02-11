@@ -155,5 +155,13 @@ a {
       z-index: -1000;
       background-color: #ff6a5c;
     }
+
+    .fieldset {
+      input {
+        &::placeholder {
+          font-size: 0.5rem;
+        }
+      }
+    }
   }
 }
