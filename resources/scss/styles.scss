@@ -1,42 +1,43 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 12px;
 }
 
-.bg-image {
+.wrapper {
   position: relative;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  &::before {
-    content: "";
-    background-image: url("../img/food-bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    
+  .bg-image {
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.4;
-    min-height: 100vh;
-    min-width: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.45;
+    // min-height: 100vh;
+    // min-width: 100%;
     z-index: -1000;
-  } // image and opacity
+    // image and opacity
+  }
+
+  .mobile-bg {
+    display: none;
+  }
 
   .container {
     max-width: 475px;
@@ -44,13 +45,16 @@ body {
     padding: 1rem;
     margin: 0 auto;
     position: relative;
+    z-index: 1000;
     // border: 1px solid black;
-    
 
     .logo-img {
       display: block;
-      width: 106px;
+      width: 110px;
+      height: auto;
       margin: 5px auto;
+      position: relative;
+      z-index: 10;
     }
 
     .signin {
@@ -68,7 +72,7 @@ body {
       &-username,
       &-password,
       &-submit {
-        font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+        font: 400 12px/16px 'Open Sans', Helvetica, Arial, sans-serif;
       }
 
       &-username,
@@ -100,7 +104,7 @@ body {
         justify-content: space-evenly;
         margin: 20px 0;
       }
-  
+
       .copyright {
         text-align: center;
       }
@@ -110,7 +114,7 @@ body {
   .sign-up-box {
     background: #ffffff;
     padding: 25px;
-    
+
     p {
       text-align: center;
     }
@@ -130,4 +134,26 @@ a {
   text-decoration: none;
   color: #333;
 }
-  
+
+// mobile
+@media (max-width: 475px) {
+  .bg-image {
+    display: none;
+  }
+
+  .wrapper {
+    .mobile-bg {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      opacity: 0.6;
+      // min-height: 100vh;
+      // min-width: 100%;
+      z-index: -1000;
+      background-color: #ff6a5c;
+    }
+  }
+}
