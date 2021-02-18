@@ -21,6 +21,9 @@ body {
   font-weight: 300;
   font-size: 12px; }
 
+a {
+  text-decoration: none; }
+
 .wrapper {
   position: relative;
   height: 100vh;
@@ -49,9 +52,33 @@ body {
   grid-column: 2 / 3;
   grid-row: 4 / 6; }
 
+.flex {
+  display: flex;
+  flex-direction: column; }
+
 /* Content */
-.bg-image {
+.bg-image-1 {
   background-image: url("https://images.unsplash.com/photo-1568465452541-e0e04872706f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.45;
+  position: relative;
+  z-index: -1000; }
+
+.bg-image-2 {
+  background-image: url("https://images.pexels.com/photos/3938343/pexels-photo-3938343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.45;
+  position: relative;
+  z-index: -1000; }
+
+.bg-image-3 {
+  background-image: url("https://images.pexels.com/photos/1618921/pexels-photo-1618921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -99,32 +126,49 @@ a {
   justify-content: center;
   align-content: center;
   min-width: 100%;
-  margin: 10px auto;
-  width: 100%;
+  margin: 5px auto;
   padding: 0; }
+  .contentset .passwordreset-header {
+    font-size: 1.3rem;
+    font-weight: 600; }
+  .contentset .form-directions {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    padding: 0 2rem;
+    margin: 0 auto; }
+    .contentset .form-directions:nth-child(1) {
+      margin-top: 2px;
+      margin-bottom: 2px; }
+    .contentset .form-directions:nth-child(2) {
+      font-size: 0.5rem; }
 
-.login-username,
-.login-password,
-.login-submit {
-  font: 400 12px/16px 'Open Sans', Helvetica, Arial, sans-serif; }
-
-.login-username,
-.login-password {
-  width: 100%;
+.contentset-input {
   border: 1px solid #ccc;
   background: #fff;
   margin: 0 0 5px;
   padding: 10px; }
 
-.login-submit {
+.btn {
   cursor: pointer;
-  width: 100%;
   border: none;
-  background: #ff6a5c;
-  color: #fff;
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px; }
+
+.btn-primary {
+  background: #ff6a5c;
+  color: #fff; }
+
+.btn-accent {
+  background: #fff;
+  color: #ff6a5c;
+  border: 1px solid #ff6a5c;
+  outline: 0; }
+  .btn-accent a {
+    color: #ff6a5c;
+    display: inline-block;
+    width: 100%; }
 
 .footer {
   color: #333;

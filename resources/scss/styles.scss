@@ -5,7 +5,12 @@
 *::after {
   box-sizing: border-box;
 }
+// Variables
+$index-page-img: 'https://images.unsplash.com/photo-1568465452541-e0e04872706f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80';
 
+$passwordreset-page-img: 'https://images.pexels.com/photos/3938343/pexels-photo-3938343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+
+$signup-page-img: 'https://images.pexels.com/photos/1618921/pexels-photo-1618921.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
 // Utility
 .w25 {
   width: 25%;
@@ -23,14 +28,26 @@
   width: 100%;
 }
 
-// .opensans {
-//   font: 400 12px/16px 'Open Sans', Helvetica, Arial, sans-serif;
-// }
+//Mixin
+@mixin image-background-properties($image) {
+  background-image: url($image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.45;
+  position: relative;
+  z-index: -1000;
+}
 
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 12px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -68,17 +85,23 @@ body {
   grid-row: 4 / 6;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Content */
 
-.bg-image {
-  background-image: url('https://images.unsplash.com/photo-1568465452541-e0e04872706f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: 0.45;
-  position: relative;
-  z-index: -1000;
+.bg-image-1 {
+  @include image-background-properties($index-page-img);
+}
+
+.bg-image-2 {
+  @include image-background-properties($passwordreset-page-img);
+}
+
+.bg-image-3 {
+  @include image-background-properties($signup-page-img);
 }
 
 a {
@@ -126,35 +149,62 @@ a {
   justify-content: center;
   align-content: center;
   min-width: 100%;
-  margin: 10px auto;
-  width: 100%;
+  margin: 5px auto;
   padding: 0;
+
+  .passwordreset-header {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .form-directions {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+
+    &:nth-child(1) {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    &:nth-child(2) {
+      font-size: 0.5rem;
+    }
+  }
 }
 
-.login-username,
-.login-password,
-.login-submit {
-  font: 400 12px/16px 'Open Sans', Helvetica, Arial, sans-serif;
-}
-
-.login-username,
-.login-password {
-  width: 100%;
+.contentset-input {
   border: 1px solid #ccc;
   background: #fff;
   margin: 0 0 5px;
   padding: 10px;
 }
 
-.login-submit {
+.btn {
   cursor: pointer;
-  width: 100%;
   border: none;
-  background: #ff6a5c;
-  color: #fff;
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
+}
+
+.btn-primary {
+  background: #ff6a5c;
+  color: #fff;
+}
+
+.btn-accent {
+  background: #fff;
+  color: #ff6a5c;
+  border: 1px solid #ff6a5c;
+  outline: 0;
+  a {
+    color: #ff6a5c;
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 .footer {
@@ -171,157 +221,3 @@ a {
 .copyright {
   text-align: center;
 }
-
-// .wrapper {
-//   position: relative;
-//   height: 100vh;
-//   width: 100%;
-//   overflow: hidden;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-
-//   .bg-image {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100vh;
-//     opacity: 0.45;
-//     // min-height: 100vh;
-//     // min-width: 100%;
-//     z-index: -1000;
-//     // image and opacity
-//   }
-
-//   .mobile-bg {
-//     display: none;
-//   }
-
-//   .container {
-//     max-width: 475px;
-//     width: 100%;
-//     padding: 1rem;
-//     margin: 0 auto;
-//     position: relative;
-//     z-index: 1000;
-//     // border: 1px solid black;
-
-//     .logo-img {
-//       display: block;
-//       width: 110px;
-//       height: auto;
-//       margin: 5px auto;
-//       position: relative;
-//       z-index: 10;
-//     }
-
-//     .signin {
-//       background-color: #ffffff;
-//       padding: 25px;
-
-//       .fieldset {
-//         border: medium none;
-//         margin: 0 0 10px;
-//         min-width: 100%;
-//         padding: 0;
-//         width: 100%;
-//       }
-
-//       &-username,
-//       &-password,
-//       &-submit {
-//         font: 400 12px/16px 'Open Sans', Helvetica, Arial, sans-serif;
-//       }
-
-//       &-username,
-//       &-password {
-//         width: 100%;
-//         border: 1px solid #ccc;
-//         background: #fff;
-//         margin: 0 0 5px;
-//         padding: 10px;
-//       }
-
-//       &-submit {
-//         cursor: pointer;
-//         width: 100%;
-//         border: none;
-//         background: #ff6a5c;
-//         color: #fff;
-//         margin: 0 0 5px;
-//         padding: 10px;
-//         font-size: 15px;
-//       }
-//     }
-
-//     .footer {
-//       color: #333;
-//       font-weight: 600;
-//       .links ul {
-//         display: flex;
-//         justify-content: space-evenly;
-//         margin: 20px 0;
-//       }
-
-//       .copyright {
-//         text-align: center;
-//       }
-//     }
-//   }
-
-//   .sign-up-box {
-//     background: #ffffff;
-//     padding: 25px;
-
-//     p {
-//       text-align: center;
-//     }
-//   }
-// } // .bg-image
-
-// .forgot_password_link {
-//   margin-top: 20px;
-//   text-align: center;
-// }
-
-// .sign-up-link a {
-//   color: darken(#09c, 15%);
-// }
-
-// a {
-//   text-decoration: none;
-//   color: #333;
-// }
-
-// // mobile
-// @media (max-width: 475px) {
-//   .bg-image {
-//     display: none;
-//   }
-
-//   .wrapper {
-//     .mobile-bg {
-//       display: block;
-//       position: absolute;
-//       left: 0;
-//       top: 0;
-//       width: 100%;
-//       height: 100vh;
-//       opacity: 0.6;
-//       // min-height: 100vh;
-//       // min-width: 100%;
-//       z-index: -1000;
-//       background-color: #ff6a5c;
-//     }
-
-//     .fieldset {
-//       input {
-//         &::placeholder {
-//           font-size: 0.5rem;
-//         }
-//       }
-//     }
-//   }
-// }
