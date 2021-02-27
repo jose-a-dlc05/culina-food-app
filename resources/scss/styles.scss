@@ -199,12 +199,6 @@ a {
   background: #fff;
   color: #ff6a5c;
   border: 1px solid #ff6a5c;
-  outline: 0;
-  a {
-    color: #ff6a5c;
-    display: inline-block;
-    width: 100%;
-  }
 }
 
 .footer {
@@ -220,4 +214,132 @@ a {
 
 .copyright {
   text-align: center;
+}
+
+// Food Page
+.food-wrapper > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+html,
+body {
+  //   box-sizing: border-box;
+  //   background-color: #ffeead;
+  height: 100%;
+  //   padding: 10px;
+  //   margin: 0px;
+}
+
+// .wrapper > div:nth-child(1n) {
+//   // background-color: #96ceb4;
+// }
+
+.food-wrapper > div:nth-child(3n) {
+  background-color: #88d8b0;
+}
+
+.food-wrapper > div:nth-child(2n) {
+  background-color: #ff6f69;
+}
+
+.food-wrapper > div:nth-child(4n) {
+  background-color: #ffcc5c;
+}
+
+.food-wrapper {
+  height: 100%;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 60px 60px 90px auto 60px;
+  grid-template-areas:
+    'h h h h h h h h h h h h'
+    'sh sh sh sh sh sh sh sh sh sh sh sh'
+    'st st st st st st st st st st st st'
+    'm m m m m m m m m m m m'
+    'f f f f f f f f f f f f';
+}
+
+.food-header {
+  grid-area: h;
+}
+
+.food-search-header {
+  grid-area: sh;
+}
+
+.food-search-type {
+  grid-area: st;
+  display: block;
+}
+
+.food-menu {
+  grid-area: m;
+}
+
+.food-footer {
+  grid-area: f;
+}
+
+.hide {
+  display: block;
+}
+
+@media (max-width: 375px) {
+  .food-wrapper > div {
+    font-size: 1.2em;
+  }
+  .food-wrapper {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 60px 60px auto 60px;
+    grid-template-areas:
+      'h h h h h h h h h h h h'
+      'sh sh sh sh sh sh sh sh sh sh sh sh'
+      'm m m m m m m m m m m m'
+      'f f f f f f f f f f f f';
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .contentlogo {
+    width: 50px;
+    margin: 0;
+  }
+}
+
+.fixed-top {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  width: 100%;
+  &-toggler {
+    position: relative;
+    left: 0.3rem;
+    border-color: transparent !important;
+  }
+}
+
+.nav {
+  flex-direction: column;
+  align-items: center;
+
+  .active {
+    color: #66b0ff;
+  }
+
+  a {
+    color: #333;
+  }
+}
+
+#navbarToggleExternalContent {
+  width: 100%;
 }
