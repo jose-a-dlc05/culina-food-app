@@ -144,6 +144,27 @@ a {
   z-index: 10;
 }
 
+@media (max-width: 576px) {
+  .contentlogo-mobile {
+    width: 50px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contentlogo-mobile {
+    width: 60px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 1800px) {
+  .contentlogo-mobile {
+    width: 75px;
+    margin: 0;
+  }
+}
+
 .contentset {
   display: flex;
   justify-content: center;
@@ -306,40 +327,82 @@ body {
   .hide {
     display: none !important;
   }
-
-  .contentlogo {
-    width: 50px;
-    margin: 0;
-  }
 }
 
-.fixed-top {
-  display: flex;
-  flex-wrap: wrap;
+// FOOD PAGE
+.bg-light-primary {
+  background-color: #ffd9da;
 }
 
 .navbar {
-  width: 100%;
   &-toggler {
-    position: relative;
-    left: 0.3rem;
     border-color: transparent !important;
   }
 }
 
-.nav {
-  flex-direction: column;
-  align-items: center;
+.form-control-nav {
+  border-radius: 7px;
+  border: 0;
+  padding: 0.5rem;
 
-  .active {
-    color: #66b0ff;
-  }
-
-  a {
-    color: #333;
+  &:focus {
+    outline: 0;
   }
 }
 
-#navbarToggleExternalContent {
-  width: 100%;
+@media (max-width: 767px) {
+  .form-control-nav {
+    display: block;
+    margin: 0.2rem auto;
+  }
+  .navbar-collapse {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
 }
+
+@media (max-width: 1200px) {
+  .navbar {
+    font-size: 1rem;
+  }
+  // .form-control-nav {
+  //   border: 0;
+  //   padding: 0.5rem;
+  // }
+}
+
+// @media (max-width: 992px) {
+//   .navbar {
+//     font-size: 0.9rem;
+//   }
+// }
+
+// .fixed-top {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .navbar {
+//   width: 100%;
+//   &-toggler {
+//     position: relative;
+//     left: 0.3rem;
+//     border-color: transparent !important;
+//   }
+// }
+
+// .nav {
+//   flex-direction: column;
+//   align-items: center;
+
+//   .active {
+//     color: #66b0ff;
+//   }
+
+//   a {
+//     color: #333;
+//   }
+// }
+
+// #navbarToggleExternalContent {
+//   width: 100%;
+// }

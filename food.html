@@ -21,48 +21,59 @@
   <body>
     <div class="food-wrapper">
       <div class="food-header">
-        <div class="container">
-          <div class="fixed-top">
-            <nav class="navbar navbar-light bg-light">
-              <img
+        <nav
+          class="navbar navbar-light bg-light-primary navbar-expand-md fixed-top"
+        >
+          <a href="#" class="navbar-brand"
+            ><img
               src="resources/img/Culina-logo-black.png"
               alt="black outline of bowl of rice"
-              class="contentlogo"
+              class="contentlogo-mobile"
+          /></a>
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav text-center mx-auto">
+              <li class="navbar-item">
+                <a href="food.html" class="nav-link">Home</a>
+              </li>
+              <li class="navbar-item">
+                <a href="#" class="nav-link">Learn</a>
+              </li>
+              <li class="navbar-item">
+                <a href="#" class="nav-link">Rent-a-kitchen</a>
+              </li>
+              <li class="navbar-item">
+                <a href="#" class="nav-link">Upload</a>
+              </li>
+              <li class="navbar-item">
+                <a href="index.html" class="nav-link">Log out</a>
+              </li>
+            </ul>
+            <input
+              class="form-control-nav"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
             />
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </nav>
-            <div class="collapse" id="navbarToggleExternalContent">
-              <div class="bg-light p-4">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="food.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Learn</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Rent Kitchen
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Log out
-                    </a>
-                  </li>
-                </ul></span>
-              </div>
-            </div>
           </div>
-        </div>
+          <!-- <form class="form-inline mx-auto">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form> -->
+        </nav>
       </div>
       <!-- <div class="food-search-header">SEARCH HEADER</div>
       <div class="food-search-type hide">SEARCH TYPE</div>
