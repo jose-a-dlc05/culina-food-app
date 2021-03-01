@@ -284,7 +284,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2em;
+  font-size: 1.4em;
   color: #ffeead;
 }
 
@@ -312,9 +312,9 @@ body {
   grid-gap: 3px;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: 60px 60px 90px auto 60px;
-      grid-template-rows: 60px 60px 90px auto 60px;
-      grid-template-areas: 'h h h h h h h h h h h h' 'sh sh sh sh sh sh sh sh sh sh sh sh' 'st st st st st st st st st st st st' 'm m m m m m m m m m m m' 'f f f f f f f f f f f f';
+  -ms-grid-rows: 60px auto 100px;
+      grid-template-rows: 60px auto 100px;
+      grid-template-areas: 'h h h h h h h h h h h h' 'm m m m m m m m m m m m' 'f f f f f f f f f f f f';
 }
 
 .food-header {
@@ -324,37 +324,44 @@ body {
   grid-area: h;
 }
 
-.food-search-header {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-area: sh;
-}
-
-.food-search-type {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-area: st;
-  display: block;
-}
-
 .food-menu {
-  -ms-grid-row: 4;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: m;
 }
 
 .food-footer {
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffd9da;
+  margin: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.food-footer a {
+  color: #333;
 }
 
 .hide {
   display: block;
+}
+
+.nav {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 375px) {
@@ -391,6 +398,10 @@ body {
   outline: 0;
 }
 
+.form-control-nav-submit {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .form-control-nav {
     display: block;
@@ -401,8 +412,25 @@ body {
   }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 768px) {
   .navbar {
     font-size: 1rem;
+  }
+  .food-footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+@media (min-width: 768px) and (min-width: 1201px) {
+  .navbar {
+    font-size: 1.3rem;
   }
 }

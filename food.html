@@ -55,36 +55,44 @@
                 <a href="index.html" class="nav-link">Log out</a>
               </li>
             </ul>
-            <input
+            <form action="#">
+              <input
               class="form-control-nav"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
+            <input type="submit" name="recipe-search" class="form-control-nav-submit">
+            </form>
+            
           </div>
-          <!-- <form class="form-inline mx-auto">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </form> -->
         </nav>
       </div>
-      <!-- <div class="food-search-header">SEARCH HEADER</div>
-      <div class="food-search-type hide">SEARCH TYPE</div>
-      <div class="food-menu">MENU</div>
-      <div class="food-footer">FOOTER</div> -->
+      <div class="food-menu">
+        <div class="recipe-cards"></div>
+      </div>
+      <footer class="food-footer">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <p class="copyright food-copyright pb-1">&copy; 2021 Culina. All Rights Reserved.</p>
+      </footer>
+      </div>
     </div>
-    <script
+    <script src="resources/js/jquery-3.5.1.js"></script>
+    <!-- <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
       integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
@@ -95,5 +103,6 @@
       integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
       crossorigin="anonymous"
     ></script>
+    <script src="resources/js/index.js"></script>
   </body>
 </html>
