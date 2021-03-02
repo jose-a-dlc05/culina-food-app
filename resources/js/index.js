@@ -7,6 +7,6 @@ $.ajax({
 }).done(function (data) {
   // console.log(data.meals[0]);
   $.map(data.meals, function (meal, i) {
-    $('.recipe-cards').append('<p>Meal:' + meal.strMeal + '<p>');
+    $('.recipe-cards').append(`<p>Meal: ${meal.strMeal} <p>`);
   });
 });
