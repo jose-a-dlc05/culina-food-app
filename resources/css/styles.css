@@ -318,8 +318,8 @@ body {
   display: grid;
   -ms-grid-columns: (1fr)[12];
       grid-template-columns: repeat(12, 1fr);
-  -ms-grid-rows: 60px auto;
-      grid-template-rows: 60px auto;
+  -ms-grid-rows: 60px auto 75px;
+      grid-template-rows: 60px auto 75px;
       grid-template-areas: 'h h h h h h h h h h h h' 'm m m m m m m m m m m m' 'f f f f f f f f f f f f';
 }
 
@@ -377,8 +377,8 @@ body {
   .food-wrapper {
     -ms-grid-columns: (1fr)[12];
         grid-template-columns: repeat(12, 1fr);
-    -ms-grid-rows: 60px auto;
-        grid-template-rows: 60px auto;
+    -ms-grid-rows: 60px auto 75px;
+        grid-template-rows: 60px auto 75px;
         grid-template-areas: 'h h h h h h h h h h h h' 'm m m m m m m m m m m m' 'f f f f f f f f f f f f';
   }
   .hide {

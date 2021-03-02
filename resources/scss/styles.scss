@@ -281,7 +281,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 60px auto;
+  grid-template-rows: 60px auto 75px;
   grid-template-areas:
     'h h h h h h h h h h h h'
     'm m m m m m m m m m m m'
@@ -323,7 +323,7 @@ body {
   }
   .food-wrapper {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 60px auto;
+    grid-template-rows: 60px auto 75px;
     grid-template-areas:
       'h h h h h h h h h h h h'
       'm m m m m m m m m m m m'

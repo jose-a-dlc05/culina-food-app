@@ -6,7 +6,9 @@ $.ajax({
   dataType: 'json',
 }).done(function (data) {
   // console.log(data.meals[0]);
-  $.map(data.meals, function (meal, i) {
-    $('.recipe-cards').append(`<p>Meal: ${meal.strMeal} <p>`);
+  $.map(data, function (meal, i) {
+    $('.recipe-cards').append(
+      `<img src="${meal[0].strMealThumb}"/> <p> ${meal[0].strArea} </p><p>Origin: ${meal[0].strArea} </p><p>Category: ${meal[0].strCategory} </p><p>Meal: ${meal[0].strMeal} <p>`
+    );
   });
 });
