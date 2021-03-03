@@ -281,31 +281,9 @@ a {
   text-align: center;
 }
 
-.food-wrapper > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 1.4em;
-  color: #ffeead;
-}
-
 html,
 body {
   height: 100%;
-}
-
-.food-wrapper > div:nth-child(3n) {
-  background-color: #88d8b0;
-}
-
-.food-wrapper > div:nth-child(4n) {
-  background-color: #ffcc5c;
 }
 
 .food-wrapper {
@@ -331,6 +309,9 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 12;
   grid-area: m;
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .food-footer {
@@ -443,6 +424,7 @@ body {
   -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
+  margin-top: 5em;
 }
 
 .recipe-cards .recipe-wrapper {
@@ -481,9 +463,8 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .recipe-cards .card {
