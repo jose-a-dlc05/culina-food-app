@@ -380,13 +380,14 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
-  margin-top: 5em;
+  margin-top: 4em;
 
   .recipe-wrapper {
     justify-content: center;
     align-items: flex-end;
     position: relative;
     color: #333;
+    margin: auto;
   }
 
   .recipe {
@@ -412,5 +413,35 @@ body {
   .card {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
       0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
+  }
+
+  .recipe__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    height: calc(100% - (2.5rem * 2));
+    background: #fff;
+    overflow: auto;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    &:hover {
+      opacity: 1;
+    }
+
+    .recipe__type,
+    .recipe__name {
+      margin: 0 auto 0.5rem auto;
+      font-size: 1rem;
+      line-height: 1.07em;
+      letter-spacing: -0.015em;
+    }
+    .recipe__video,
+    .recipe__instructions {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+    }
   }
 }

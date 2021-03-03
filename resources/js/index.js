@@ -16,7 +16,21 @@ $.ajax({
               <span>Category: ${meal.strCategory}</span>
             </span>
           </div>
-      </div>`
+          <div class='recipe__content'>
+            <h3 class="recipe__name">Meal: ${meal.strMeal} </h3>
+            <div class='recipe__type'>Type: ${
+              meal.strTags == null ? 'N/A' : meal.strTags
+            }</div>
+            <div class='recipe__video'>Click <a href="${
+              meal.strYoutube
+            }" target="_blank">here</a> for video instructions</div>
+            <div class='recipe__instructions'>Click <a href="${
+              meal.strSource
+            }" target="_blank">here</a> for detailed instructions</div>
+          </div>
+      </div>
+      
+      `
     );
   });
   // $.map(data, function (meal, i) {
