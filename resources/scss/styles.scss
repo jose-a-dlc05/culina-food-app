@@ -270,7 +270,7 @@ body {
 }
 
 .food-wrapper > div:nth-child(2n) {
-  background-color: #ff6f69;
+  // background-color: #ff6f69;
 }
 
 .food-wrapper > div:nth-child(4n) {
@@ -407,14 +407,21 @@ body {
     padding: 1rem;
     text-align: center;
     width: 100%;
+    font-size: 0.9rem;
     .recipe__img {
       margin: auto;
-      height: 20rem;
+      height: 15rem;
       border: 0.5px solid #333;
     }
     .recipe__info {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
     }
+  }
+
+  .card {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 16, 0.19),
+      0 0.3rem 0.3rem rgba(0, 0, 16, 0.23);
   }
 }
