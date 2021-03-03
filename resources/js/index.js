@@ -8,7 +8,16 @@ $.ajax({
   // console.log(data.meals[0]);
   $.map(data, function (meal, i) {
     $('.recipe-cards').append(
-      `<img src="${meal[0].strMealThumb}"/> <p> ${meal[0].strArea} </p><p>Origin: ${meal[0].strArea} </p><p>Category: ${meal[0].strCategory} </p><p>Meal: ${meal[0].strMeal} <p>`
+      `<div class='recipe-wrapper card'>
+          <div class='recipe'>
+            <img class='recipe__img' src="${meal[0].strMealThumb}"/>
+            <h3>Meal: ${meal[0].strMeal} </h3>
+            <span class='recipe__info'>
+              <span>Origin: ${meal[0].strArea}</span>
+              <span>Category: ${meal[0].strCategory}</span>
+            </span>
+          </div>
+      </div>`
     );
   });
 });
