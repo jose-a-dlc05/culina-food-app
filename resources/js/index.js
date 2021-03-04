@@ -1,4 +1,4 @@
-// Get Recipes
+// Load Recipes on Page
 $(document).ready(
   $.ajax({
     method: 'GET',
@@ -28,27 +28,33 @@ $(document).ready(
                 meal.strSource
               }" target="_blank">here</a> for detailed instructions</div>
             </div>
-        </div>
-        
-        `
+        </div>`
       );
     });
   })
 );
 
-// filter recipes
+// Filter recipes
 document.addEventListener('DOMContentLoaded', function (e) {
   const searchBar = document.forms['search-recipes'].querySelector('input');
-  const recipeCard = document.querySelectorAll('.recipe-wrapper');
   searchBar.addEventListener('keyup', (e) => {
     const term = e.target.value.toLowerCase();
-    const recipes = document.querySelectorAll('.meal-name');
+    // Returns all cards in html
+    const recipes = document.querySelectorAll('.card');
+    // Regex function
+    let expression = new RegExp(term, 'i');
+    // First iteration of card
     Array.from(recipes).forEach((recipe) => {
-      const meal = recipe.textContent;
-      if (meal.toLowerCase().indexOf(e.target.value) != -1) {
-        recipeCard.style.display = 'block';
-      }
-      recipeCard.style.display = 'none';
+      const meal = recipe.querySelectorAll('.meal-name');
+      // narrowing down within card for obtaining meal name
+      Array.from(meal).forEach((value) => {
+        let mealName = value.textContent.slice(6).toLowerCase();
+        if (mealName.indexOf(term) != -1) {
+          recipe.style.display = 'block';
+        } else {
+          recipe.style.display = 'none';
+        }
+      });
     });
   });
 });
