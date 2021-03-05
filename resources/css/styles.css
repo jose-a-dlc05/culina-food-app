@@ -204,9 +204,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
   min-width: 100%;
@@ -241,6 +248,12 @@ a {
   background: #fff;
   margin: 0 0 5px;
   padding: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+.contentset-input:focus {
+  outline: 0;
+  border-color: #777;
 }
 
 .btn {
@@ -504,4 +517,26 @@ body {
   margin: 1rem 0;
   font-size: 0.9rem;
   line-height: 1.3rem;
+}
+
+.invalid-feedback {
+  font-size: 0.5rem;
+  color: #e74c3c;
+  position: relative;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  left: 3.7rem;
+  visibility: hidden;
+}
+
+.invalid-feedback.error {
+  visibility: visible;
+}
+
+.contentset-input.success {
+  border-color: #2ecc71;
+}
+
+.contentset-input.error {
+  border-color: #e74c3c;
 }
