@@ -1,6 +1,6 @@
-const form = document.getElementById('login-form');
+const form = document.getElementById('reset-form');
 const loginEmail = document.getElementById('email-input');
-const loginPass = document.getElementById('password-input');
+const submitBtn = document.getElementById('submit-btn');
 
 // show error input messages
 function showError(input, message) {
@@ -23,6 +23,20 @@ function showSuccess(input) {
   input.classList.add('success');
 }
 
+// Validate email input
+function isValidEmail(input) {
+  let response = false;
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (re.test(String(input.value).toLowerCase())) {
+    console.log(re.test(String(input).toLowerCase()));
+    showSuccess(input);
+    response = true;
+  } else {
+    showError(input, 'Email is not valid');
+  }
+  return response;
+}
+
 // Check if email match
 function checkEmailsMatch(input) {
   let response;
@@ -37,37 +51,17 @@ function checkEmailsMatch(input) {
   return response;
 }
 
-// Check if passwords match
-function checkPasswordsMatch(input) {
-  let response;
-  if (input.value.trim() === '') {
-    showError(input, `${getFieldName(input).split('-')[0]} is required`);
-  } else if (input.value !== sessionStorage.getItem('password-input')) {
-    showError(input, 'Please enter correct password');
-  } else {
-    showSuccess(input);
-    response = true;
-  }
-  return response;
-}
-
-function getFieldName(input) {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
-
-// Redirect to Home
-function redirectHome() {
-  window.location.assign('food.html');
+// Redirect to Verification Page
+function redirectVerification() {
+  window.location.assign('index.html');
 }
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   checkEmailsMatch(loginEmail);
-  checkPasswordsMatch(loginPass);
 
-  if (checkEmailsMatch(loginEmail) && checkPasswordsMatch(loginPass)) {
-    sessionStorage.setItem('loginstatus', 'yes');
-    redirectHome();
+  if (checkEmailsMatch(loginEmail)) {
+    redirectVerification();
   }
 });

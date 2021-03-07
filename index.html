@@ -13,7 +13,7 @@
       <div class="grid">
         <div class="bg-image-1"></div>
         <div class="contentbox bg-white">
-          <form action="#" method="post" class="contentform">
+          <form id="login-form" class="contentform">
             <img
               src="resources/img/Culina-logo-black.png"
               alt="black outline of bowl of rice"
@@ -21,22 +21,24 @@
             />
             <div class="contentset">
               <input
-                placeholder="Phone number, username, or email"
+                placeholder="Email"
                 type="text"
+                id="email-input"
                 class="contentset-input w75"
               />
+              <small class="invalid-feedback"> Error Message </small>
             </div>
             <div class="contentset">
               <input
                 placeholder="Password"
                 type="text"
                 class="contentset-input w75"
+                id="password-input"
               />
+              <small class="invalid-feedback"> Error Message </small>
             </div>
             <div class="contentset">
-              <button name="login" type="submit" class="btn btn-primary w75">
-                Log In
-              </button>
+              <button type="submit" class="btn btn-primary w75">Log In</button>
             </div>
             <div class="contentset">
               <a href="signup.html" class="btn btn-accent w75">Sign Up</a>
@@ -62,6 +64,6 @@
         </div>
       </div>
     </div>
-    <script src="index.js"></script>
+    <script src="/resources/js/index.js"></script>
   </body>
 </html>
